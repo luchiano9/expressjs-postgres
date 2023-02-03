@@ -26,7 +26,7 @@ app.get("/", async (req, res) => {
 
 app.get("/api/lucho", async (req, res) => {
   console.log("FUx");
-  res.send(`Hello, World! The time from the DB is`);
+  res.json({ message: 'Hello from the server!' });
 });
 
 
