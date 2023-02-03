@@ -25,8 +25,7 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/api/lucho", async (req, res) => {
-  console.log("FUx");
-  console.log(req.body);
+  // console.log(req.body);
   res.json({ message: 'Hello from the server!' });
 });
 
