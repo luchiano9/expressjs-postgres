@@ -17,24 +17,11 @@ app.use(bodyParser.text({ type: "text/html" }));
 // Permitir cualquier origen
 app.use(cors());
 
-app.options('*', (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
-  res.send()
-})
-
 // app.use((req, res, next) => {
 //   res.header('Access-Control-Allow-Origin', '*');
 //   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 //   next();
 // });
-
-app.get("/", async (req, res) => {
-  const { rows } = await pool.query("SELECT NOW()");
-  res.send(`Hello, World! The time from the DB is ${rows[0].now}`);
-});
-
 app.post("/api/lucho", async (req, res) => {
   // console.log(req.body);
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -43,6 +30,12 @@ app.post("/api/lucho", async (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   res.json({ message: 'Hello from the server!' });
 });
+
+app.get("/", async (req, res) => {
+  const { rows } = await pool.query("SELECT NOW()");
+  res.send(`Hello, World! The time from the DB is ${rows[0].now}`);
+});
+
 
 
 app.listen(port, () => {
