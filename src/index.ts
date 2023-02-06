@@ -30,6 +30,10 @@ app.get("/", async (req, res) => {
 
 app.get("/api/lucho", async (req, res) => {
   // console.log(req.body);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+  res.setHeader('Content-Type', 'application/json')
   res.json({ message: 'Hello from the server!' });
 });
 
