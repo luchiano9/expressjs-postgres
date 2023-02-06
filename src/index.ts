@@ -28,7 +28,7 @@ app.post("/api/lucho", async (req, res) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   res.setHeader('Content-Type', 'application/json')
-  res.json({ message: 'Hello from the server!' });
+  res.send(JSON.stringify({ message: 'Hello World!' }))
 });
 
 app.get("/", async (req, res) => {
