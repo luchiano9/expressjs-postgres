@@ -15,7 +15,7 @@ app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
 app.use(bodyParser.text({ type: "text/html" }));
 
 // Permitir cualquier origen
-app.use(cors({ origin: true }))
+app.use(cors());
 
 app.options('*', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
