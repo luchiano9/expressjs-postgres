@@ -8,14 +8,14 @@ import cors from "cors";
 const pool = new pg.Pool();
 
 const app = express();
+// Permitir cualquier origen
+app.use(cors());
 const port = process.env.PORT || 3333;
 
 app.use(bodyParser.json());
 app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
 app.use(bodyParser.text({ type: "text/html" }));
 
-// Permitir cualquier origen
-app.use(cors());
 
 // app.use((req, res, next) => {
 //   res.header('Access-Control-Allow-Origin', '*');
