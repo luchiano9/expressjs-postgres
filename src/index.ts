@@ -12,9 +12,9 @@ const app = express();
 app.use(cors());
 const port = process.env.PORT || 3333;
 
-app.use(bodyParser.json());
-app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
-app.use(bodyParser.text({ type: "text/html" }));
+app.use(express.json());
+// app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
+// app.use(bodyParser.text({ type: "text/html" }));
 
 
 // app.use((req, res, next) => {
