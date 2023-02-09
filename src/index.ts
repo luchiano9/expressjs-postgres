@@ -12,11 +12,11 @@ app.use(express.json());
 // Permitir cualquier origen
 app.use(cors(),(req,res) => {
 
-    let mensaje = req.body;
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
-    res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+  res.setHeader('Content-Type', 'application/json');
+  let mensaje = req.body;
     res.send(JSON.stringify({ message: 'Hello World!' , message2: mensaje }));
     
 });
