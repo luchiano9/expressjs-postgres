@@ -15,12 +15,13 @@ app.use(cors(),(req,res) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   res.setHeader('Content-Type', 'application/json');
+  app.use(express.json());
   res.send(JSON.stringify({ message: 'Hello World!' , message2: `el reqbody es: ${req.body}`}));
   
 });
 
 const port = process.env.PORT || 3333;
-app.use(express.json());
+// app.use(express.json());
 
 // app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
 // app.use(bodyParser.text({ type: "text/html" }));
