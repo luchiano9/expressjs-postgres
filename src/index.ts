@@ -14,6 +14,8 @@ app.use(cors(),(req,res) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
     res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ message: 'Hello World!' }))
+    
 });
   
 const port = process.env.PORT || 3333;
