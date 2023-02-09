@@ -9,7 +9,13 @@ const pool = new pg.Pool();
 
 const app = express();
 // Permitir cualquier origen
-app.use(cors());
+app.use(cors(),(req,res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+    res.setHeader('Content-Type', 'application/json');
+});
+  
 const port = process.env.PORT || 3333;
 
 app.use(express.json());
