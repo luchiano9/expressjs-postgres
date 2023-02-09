@@ -15,7 +15,7 @@ app.use(cors(),(req,res) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({ message: 'Hello World!' , message2: req.body}));
+  res.send(JSON.stringify({ message: 'Hello World!' , message2: `el reqbody es: ${req.body}`}));
   
 });
 
