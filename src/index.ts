@@ -17,7 +17,7 @@ app.use(cors(),(req,res) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   res.setHeader('Content-Type', 'application/json');
   app.use(express.json());
-  res.send(JSON.stringify({ message: 'Hello World!' , message2: `el reqbody es: ${req.body}`}));
+  res.send(JSON.stringify({ message: 'Hello World!' , message2: `el reqbody es: ${req.body.mensaje}`}));
   
 });
 
