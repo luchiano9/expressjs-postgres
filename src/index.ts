@@ -5,9 +5,10 @@ import cors from "cors";
 
 // Connect to the database using the DATABASE_URL environment
 //   variable injected by Railway
-const pool = new pg.Pool();
 
 const app = express();
+// app.use(bodyParser.json());
+app.use(express.json());
 // Permitir cualquier origen
 app.use(cors(),(req,res) => {
   
@@ -21,7 +22,6 @@ app.use(cors(),(req,res) => {
 });
 
 const port = process.env.PORT || 3333;
-// app.use(express.json());
 
 // app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
 // app.use(bodyParser.text({ type: "text/html" }));
@@ -42,8 +42,6 @@ app.post("/api/lucho", async (req, res) => {
 });
 
 app.get("/", async (req, res) => {
-  const { rows } = await pool.query("SELECT NOW()");
-  res.send(`Hello, World! The time from the DB is ${rows[0].now}`);
 });
 
 
