@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "build": "node src/index.js",
+    "build": "",
     "start": "node src/index.js"
   },
   "dependencies": {
